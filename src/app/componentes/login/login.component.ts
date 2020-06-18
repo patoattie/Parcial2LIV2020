@@ -66,4 +66,33 @@ export class LoginComponent implements OnInit {
   public getOcultaClave(): boolean {
     return this.ocultaClave;
   }
+
+  public cargarUsuario(usuario: string): void {
+    switch (usuario) {
+      case 'loc1':
+        this.loginForm.controls.correo.setValue('loc1@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+      case 'loc2':
+        this.loginForm.controls.correo.setValue('loc2@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+      case 'loc3':
+        this.loginForm.controls.correo.setValue('loc3@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+      case 'cli1':
+        this.loginForm.controls.correo.setValue('cli1@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+      case 'cli2':
+        this.loginForm.controls.correo.setValue('cli2@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+      case 'cli3':
+        this.loginForm.controls.correo.setValue('cli3@parcial2.com');
+        this.loginForm.controls.clave.setValue('123123');
+        break;
+    }
+  }
 }

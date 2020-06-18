@@ -1,0 +1,42 @@
+<h2 *ngIf="producto.nombre !== null">Producto: {{ producto.nombre }}</h2>
+<h2 *ngIf="producto.nombre === null">Nuevo Producto</h2>
+<form [formGroup]="productoForm" (ngSubmit)="guardar()">
+    <div class="container">
+        <mat-form-field *ngIf="producto.nombre === null" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput placeholder="Ingrese nombre de producto" [formControl]="productoForm.controls.nombre">
+            <mat-error *ngIf="productoForm.controls.nombre.invalid">{{ mostrarError('nombre') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Marca</mat-label>
+            <input type="text" matInput placeholder="Ingrese marca de producto" [formControl]="productoForm.controls.marca">
+            <mat-error *ngIf="productoForm.controls.marca.invalid">{{ mostrarError('marca') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Stock</mat-label>
+            <input type="number" matInput placeholder="Ingrese stock de producto" [formControl]="productoForm.controls.stock">
+            <mat-error *ngIf="productoForm.controls.stock.invalid">{{ mostrarError('stock') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Tipo</mat-label>
+            <mat-select [formControl]="productoForm.controls.tipo">
+                <mat-option *ngFor="let tipo of enumTipo" [value]="tipo">{{ tipo }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="productoForm.controls.tipo.invalid">{{ mostrarError('tipo') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Local</mat-label>
+            <mat-select [formControl]="productoForm.controls.local">
+                <mat-option *ngFor="let unLocal of locales" [value]="unLocal.displayName">{{ unLocal.displayName }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="productoForm.controls.local.invalid">{{ mostrarError('local') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Precio</mat-label>
+            <input type="number" matInput placeholder="Ingrese precio de producto" [formControl]="productoForm.controls.precio">
+            <mat-error *ngIf="productoForm.controls.precio.invalid">{{ mostrarError('precio') }}</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Guardar</button>
+        <button type="button" mat-raised-button (click)="cerrar()">Cancelar</button>
+    </div>
+</form>

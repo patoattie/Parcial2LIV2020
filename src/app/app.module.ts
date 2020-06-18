@@ -24,6 +24,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 
 import { LoginComponent } from './componentes/login/login.component';
 import { SignupComponent } from './componentes/signup/signup.component';
@@ -32,6 +34,8 @@ import { InicioComponent } from './paginas/inicio/inicio.component';
 import { IngresoComponent } from './paginas/ingreso/ingreso.component';
 import { RegistroComponent } from './paginas/registro/registro.component';
 import { PrincipalComponent } from './paginas/principal/principal.component';
+import { ProductosComponent } from './paginas/productos/productos.component';
+import { ProductoComponent } from './componentes/producto/producto.component';
 
 export function tokenGetter() {
   return localStorage.getItem('usuario');
@@ -46,7 +50,9 @@ export function tokenGetter() {
     InicioComponent,
     IngresoComponent,
     RegistroComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ProductosComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,9 @@ export function tokenGetter() {
     MatSnackBarModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [
     DatePipe,
