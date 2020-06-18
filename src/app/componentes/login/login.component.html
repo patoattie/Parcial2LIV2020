@@ -1,0 +1,18 @@
+<form [formGroup]="loginForm" (ngSubmit)="ingresar()">
+    <div class="container">
+        <mat-form-field appearance="fill">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput placeholder="Ingrese su dirección de correo" [formControl]="loginForm.controls.correo">
+          <mat-error *ngIf="loginForm.controls.correo.invalid">{{ mostrarError('correo') }}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Clave de acceso</mat-label>
+            <input matInput [formControl]="loginForm.controls.clave" [type]="getOcultaClave() ? 'password' : 'text'">
+            <a mat-icon-button matSuffix (click)="setOcultaClave(!getOcultaClave())">
+                <mat-icon>{{getOcultaClave() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </a>
+            <mat-error *ngIf="loginForm.controls.clave.invalid">{{ mostrarError('clave') }}</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" class="btnLogin">Ingresar</button>
+    </div>
+</form>

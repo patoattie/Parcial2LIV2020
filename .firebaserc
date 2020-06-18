@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "practica2-lab4": {
+      "hosting": {
+        "Practica2LIV2020": [
+          "practica2-lab4"
+        ]
+      }
+    }
+  }
+}

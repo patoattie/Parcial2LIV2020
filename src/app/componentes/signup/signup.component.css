@@ -1,0 +1,38 @@
+form {
+  /*min-width: 150px;
+  max-width: 500px;
+  width: 100%;*/
+  border: 3px solid #f1f1f1;
+  margin: 16px;
+}
+
+mat-form-field, .fldArchivo {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.btnSignup, .btnClean {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+}
+
+.btnSignup {
+  width: 75%;
+}
+
+.btnClean {
+  width: 25%;
+}
+
+.btnSignup:hover, .btnClean:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 16px;
+}

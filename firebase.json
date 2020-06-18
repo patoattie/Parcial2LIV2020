@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "Practica2LIV2020",
+      "public": "dist/Practica2LIV2020",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
