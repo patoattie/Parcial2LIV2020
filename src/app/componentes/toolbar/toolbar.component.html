@@ -9,7 +9,7 @@
 
     <div class="pc">
         <button mat-stroked-button *ngIf="!usuarioLogueado()" (click)="navegar('/ingreso')">Ingresar</button>
-        <button mat-stroked-button *ngIf="!usuarioLogueado()" (click)="navegar('/registro/'.concat(getTipoConcesionaria().toString()))">Registrar Concesionaria</button>
+        <button mat-stroked-button *ngIf="!usuarioLogueado()" (click)="navegar('/registro/'.concat(getTipoLocal().toString()))">Registrar Local</button>
         <button mat-stroked-button *ngIf="!usuarioLogueado()" (click)="navegar('/registro/'.concat(getTipoCliente().toString()))">Registrar Cliente</button>
     </div>
 
@@ -25,8 +25,13 @@
 
             <mat-divider></mat-divider>
 
+            <button mat-menu-item (click)="navegar('/registro/'.concat(getTipoLocal().toString()))">
+                <span>Registrar Local</span>
+            </button>
+            <mat-divider></mat-divider>
+
             <button mat-menu-item (click)="navegar('/registro/'.concat(getTipoCliente().toString()))">
-                <span>Registrarse</span>
+                <span>Registrar Cliente</span>
             </button>
         </mat-menu>
 

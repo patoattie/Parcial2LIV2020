@@ -38,8 +38,8 @@ export class ToolbarComponent implements OnInit {
     return this.usuarios.getTipoCliente();
   }
 
-  public getTipoConcesionaria() {
-    return this.usuarios.getTipoConcesionaria();
+  public getTipoLocal() {
+    return this.usuarios.getTipoLocal();
   }
 
   public getTipoUsuario() {

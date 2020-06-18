@@ -111,8 +111,8 @@ export class UsuariosService {
     return TipoUsuario.CLIENTE;
   }
 
-  public getTipoConcesionaria(): TipoUsuario {
-    return TipoUsuario.CONCESIONARIA;
+  public getTipoLocal(): TipoUsuario {
+    return TipoUsuario.LOCAL;
   }
 
   public getUsuario(): Usuario {

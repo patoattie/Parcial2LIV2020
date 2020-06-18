@@ -82,11 +82,11 @@ export class SignupComponent implements OnInit {
         break;
       case 'nombre':
         if (this.signupForm.controls.nombre.hasError('required')) {
-          retorno = 'Debe ingresar un nombre y apellido';
+          retorno = this.esPersona ? 'Debe ingresar un nombre y apellido' : 'Debe ingresar la razón social';
         } else if (this.signupForm.controls.nombre.hasError('minlength')) {
-          retorno = 'El nombre y apellido ingresado debe contener al menos 2 caracteres';
+          retorno = this.esPersona ? 'El nombre y apellido ingresado debe contener al menos 2 caracteres' : 'La razón social ingresada debe contener al menos 2 caracteres';
         } else {
-          retorno = 'Error inesperado con el nombre y apellido';
+          retorno = this.esPersona ? 'Error inesperado con el nombre y apellido' : 'Error inesperado con la razón social';
         }
         break;
     }

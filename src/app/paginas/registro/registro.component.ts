@@ -81,7 +81,7 @@ export class RegistroComponent implements OnInit {
     let retorno = true;
 
     if (this.tipo !== TipoUsuario[this.usuarios.getTipoCliente()]
-    && (!this.usuarios.usuarioValido() || this.usuarios.getTipo() !== this.usuarios.getTipoConcesionaria())) {
+    && (!this.usuarios.usuarioValido() || this.usuarios.getTipo() !== this.usuarios.getTipoLocal())) {
       retorno = false;
     }
 
@@ -89,7 +89,7 @@ export class RegistroComponent implements OnInit {
   }
 
   private esAdmin(): boolean {
-    return this.usuarios.usuarioValido() && this.usuarios.getTipo() === this.usuarios.getTipoConcesionaria();
+    return this.usuarios.usuarioValido() && this.usuarios.getTipo() === this.usuarios.getTipoLocal();
   }
 
   public usuarioLogueado(): boolean {

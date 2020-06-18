@@ -28,13 +28,13 @@
             <mat-error *ngIf="signupForm.controls.confirma.invalid">{{ mostrarError('clave') }}</mat-error>
         </mat-form-field>
         <mat-error *ngIf="errConfirmaClave">La confirmación de la clave no coincide con la clave ingresada</mat-error>
-        <mat-form-field appearance="fill">
-            <mat-label>Teléfono de contacto</mat-label>
-            <input type="text" matInput placeholder="Ingrese un teléfono de contacto" [formControl]="signupForm.controls.telefono">
+        <mat-form-field *ngIf="!esPersona" appearance="fill">
+            <mat-label>Teléfono</mat-label>
+            <input type="text" matInput placeholder="Ingrese un teléfono" [formControl]="signupForm.controls.telefono">
         </mat-form-field>
         <mat-form-field *ngIf="!esPersona" appearance="fill">
-            <mat-label>Dirección</mat-label>
-            <input type="text" matInput placeholder="Ingrese dirección" [formControl]="signupForm.controls.direccion">
+            <mat-label>Localidad</mat-label>
+            <input type="text" matInput placeholder="Ingrese localidad" [formControl]="signupForm.controls.direccion">
         </mat-form-field>
         <!-- <div class="fldArchivo">
             <mat-label>Foto de perfil</mat-label>

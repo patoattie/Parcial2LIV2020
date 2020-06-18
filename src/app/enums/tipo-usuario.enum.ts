@@ -1,4 +1,4 @@
 export enum TipoUsuario {
-    CONCESIONARIA,
+    LOCAL,
     CLIENTE
 }
