@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../servicios/usuarios.service';
+import { NavegacionService } from '../../servicios/navegacion.service';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +9,10 @@ import { UsuariosService } from '../../servicios/usuarios.service';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(private usuarios: UsuariosService) { }
+  constructor(
+    private usuarios: UsuariosService,
+    private navega: NavegacionService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -19,5 +23,9 @@ export class InicioComponent implements OnInit {
 
   public getTipoConcesionaria() {
     return this.usuarios.getTipoConcesionaria();
+  }
+
+  public navegar(ruta: string) {
+    this.navega.navegar(ruta);
   }
 }

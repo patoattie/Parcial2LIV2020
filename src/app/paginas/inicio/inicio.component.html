@@ -1,7 +1,6 @@
-<h2>Práctica 2 Laboratorio IV</h2>
-<h4>Sistema de Concesionarias</h4>
+<h2>Parcial 2 Laboratorio IV</h2>
 <div class="contenedor">
-    <button mat-raised-button color="primary" [routerLink]="['/ingreso']">Ingresar</button>
-    <button mat-raised-button color="accent" [routerLink]="['/registro/'.concat(getTipoConcesionaria().toString())]">Registro Concesionaria</button>
-    <button mat-raised-button color="warn" [routerLink]="['/registro/'.concat(getTipoCliente().toString())]">Registro Cliente</button>
+    <button mat-raised-button color="primary" (click)="navegar('/ingreso')">Ingresar</button>
+    <button mat-raised-button color="accent" (click)="navegar('/registro/'.concat(getTipoConcesionaria().toString()))">Registro Concesionaria</button>
+    <button mat-raised-button color="warn" (click)="navegar('/registro/'.concat(getTipoCliente().toString()))">Registro Cliente</button>
 </div>

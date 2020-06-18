@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../servicios/usuarios.service';
+import { NavegacionService } from '../../servicios/navegacion.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,7 +14,8 @@ export class ToolbarComponent implements OnInit {
   constructor(
     private location: Location,
     private usuarios: UsuariosService,
-    private router: Router
+    private router: Router,
+    private navega: NavegacionService
   ) { }
 
   ngOnInit(): void { }
@@ -76,6 +78,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   public navegar(ruta: string): void {
-    this.router.navigate([ruta]);
+    // this.router.navigate([ruta]);
+    this.navega.navegar(ruta);
   }
 }
